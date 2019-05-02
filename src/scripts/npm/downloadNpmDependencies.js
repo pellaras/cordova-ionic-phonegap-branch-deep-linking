@@ -2,6 +2,7 @@
   // properties
 
   const SDK = "branch-cordova-sdk";
+  const q = require("q");
   const fs = require("fs");
   const path = require("path");
   const exec = require("child_process").exec;
@@ -15,7 +16,6 @@
   // install the node dependencies for Branch SDK
   function install(context) {
     // set properties
-    const q = context.requireCordovaModule("q");
     var async = new q.defer(); // eslint-disable-line
     const installFlagLocation = path.join(
       context.opts.projectRoot,
