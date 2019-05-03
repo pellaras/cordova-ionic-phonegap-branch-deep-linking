@@ -5,8 +5,8 @@
   const compare = require("node-version-compare");
   const IOS_DEPLOYMENT_TARGET = "8.0";
   const COMMENT_KEY = /_comment$/;
-  const CODESIGNIDENTITY = "iPhone Developer";
-  const CODESIGNIDENTITY_RELEASE = "iPhone Distribution";
+  // const CODESIGNIDENTITY = "iPhone Developer";
+  // const CODESIGNIDENTITY_RELEASE = "iPhone Distribution";
 
   // entry
   module.exports = {
@@ -42,12 +42,12 @@
 
     for (config in configurations) {
       buildSettings = configurations[config].buildSettings;
-      if (configurations[config].name === "Release") {
-        buildSettings.CODE_SIGN_IDENTITY = `"${CODESIGNIDENTITY_RELEASE}"`;
-      } else {
-        buildSettings.CODE_SIGN_IDENTITY = `"${CODESIGNIDENTITY}"`;
-      }
-      buildSettings.CODE_SIGN_ENTITLEMENTS = `"${entitlementsFile}"`;
+      // if (configurations[config].name === "Release") {
+      //   buildSettings.CODE_SIGN_IDENTITY = `"${CODESIGNIDENTITY_RELEASE}"`;
+      // } else {
+      //   buildSettings.CODE_SIGN_IDENTITY = `"${CODESIGNIDENTITY}"`;
+      // }
+      // buildSettings.CODE_SIGN_ENTITLEMENTS = `"${entitlementsFile}"`;
 
       // if deployment target is less then the required one - increase it
       if (buildSettings.IPHONEOS_DEPLOYMENT_TARGET) {
